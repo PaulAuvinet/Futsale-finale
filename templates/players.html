@@ -1,0 +1,36 @@
+{% include "header.html" %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Liste des joueurs</h1>
+      <table class="table" style="color: white">
+
+        {% for item in all_players %}
+        <tr>
+          <td>
+            {{ item.name }}
+          </td>
+          <td>
+            {{ item.family_name }}
+          </td>
+          <td>
+            {{ item.level }}
+          </td>
+          <td>
+            <a type="button" class="btn btn-primary" href="{{ url_for('update_level', id=item.id) }}">Changer les données du joueur</a>
+          </td>
+          <td>
+            <a type="button" class="btn btn-warning" href="{{ url_for('delete_player', id=item.id) }}">Supprimer le joueur</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+  <div class="container">
+    <a  type="button" class="btn btn-primary" href="{{ url_for('create_team') }}">Créer les équipes</a>
+  </div>
+</div>
+<br>
+<br>
+{% include "footer.html" %}

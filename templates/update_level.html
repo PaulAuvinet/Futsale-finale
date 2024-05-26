@@ -1,0 +1,15 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% include "header.html" %}
+<h1>Changer le niveau des joueurs</h1>
+<div class="container">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p class="flash">{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {{ render_form(form, novalidate=True) }}
+</div>
+
+{% include "footer.html" %}

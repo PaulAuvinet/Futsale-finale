@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FUTSALE</title>
+    {% block styles %}
+        <!-- Bootstrap CSS -->
+        {{ bootstrap.load_css() }}
+    {% endblock %}
+
+    <div class="container">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link active" aria-current="page">Inscription</a></li>
+        <li class="nav-item"><a href="{{ url_for('show_players') }}" class="nav-link">Joueurs</a></li>
+        <li class="nav-item"><a href="{{ url_for('create_team') }}" class="nav-link">Equipes</a></li>
+      </ul>
+    </header>
+  </div>
+</head>
+<body>
